@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESY-FLEX : Vivez l’expérience de la réservation sans mauvaise surprise.</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'landingpage/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Resy-Flex — la plateforme qui structure le marché d’hébergement en Côte d’Ivoire.</h1>
+        <p>Voyageurs, propriétaires, ambassadeurs : ensemble, structurons le secteur d’hébergement touristique en valorisant le patrimoine immobilier ivoirien et apporter  une expérience unique aux voyageurs.</p>
+        <!-- TODO: Add image of a beautiful residence here.
+             Place the image in resyflex/landingpage/static/landingpage/residence.jpg and uncomment the line below.
+        <img src="{% static 'landingpage/residence.jpg' %}" alt="Belle résidence">
+        -->
+        <button>Rejoindre la liste d’attente Et tentez de gagner une nuit dans une de nos résidences au lancement.</button>
+    </header>
+
+    <section id="what-is">
+        <h2>Qu’est-ce que Resy-Flex ?</h2>
+        <p>Resy-Flex simplifie la réservation et la gestion des résidences meublées en Côte d’Ivoire tout en créant de la richesse pour les ambassadeurs prêts à construire leur propre empire entrepreneurial.</p>
+        <p>Notre mission : structurer, formaliser, et professionnaliser le secteur de réservation en Ci tout en offrant aux voyageurs une expérience fiable, sécurisée, fluide et permettre aux partenaires locaux de valoriser leur biens dans un cadre professionnel.</p>
+        <!-- TODO: Add image of residence verification here.
+             Place the image in resyflex/landingpage/static/landingpage/verification.jpg and uncomment the line below.
+        <img src="{% static 'landingpage/verification.jpg' %}" alt="Vérification de résidence">
+        -->
+    </section>
+
+    <section id="why">
+        <h2>Pourquoi Resy-Flex ?</h2>
+        <div>
+            <h3>Pour les voyageurs</h3>
+            <ul>
+                <li>Réservations rapides et sécurisées</li>
+                <li>Résidences de qualité et vérifiées régulièrement pour assurer la conformité entre annonces et réalité.</li>
+                <li>accompagnement avant, pendant après votre séjours : nous plaçons l’humain au cœur de nos services</li>
+                <li>paiement sécurisé: plus d’arnaque, nous sécurisons votre paiement jusqu’à votre arrivée( sécurité, transparence et confiance)</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Pour les propriétaires</h3>
+            <ul>
+                <li>Visibilité accrue auprès de milliers de voyageurs locaux et internationaux</li>
+                <li>Gestion simplifiée via un tableau de bord moderne: vous travaillez de façon professionnelle,gérer vos réservations,vos disponibilités ainsi que votre  statistique.</li>
+                <li>réduction de budget publicitaire: nous nous chargeons de votre publicité à travers le monde (réseaux sociaux, promotions par les ambassadeurs locaux ..)</li>
+                <li>Avantage concurrentiel: vous attirez des voyageurs exigeants qui souhaitent payer le prix pour la qualité.</li>
+                <li>un modèle économique flexible: vous avez le choix entre commissions ou abonnement</li>
+                <li>Plus de stress de dernière minute: assistance disponible pour assister vos clients en première ligne.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="join-us">
+        <h2>Rejoignez dès aujourd’hui notre communauté !</h2>
+        <p>Voyageurs, propriétaires et ambassadeurs : soyez parmi les premiers à profiter d’avantages exclusifs au lancement</p>
+        <p>INSCRIPTION GRATUITE</p>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="nom" placeholder="Nom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="telephone" placeholder="Téléphone" required>
+            <button type="submit">Je m’inscris / Devenir ambassadeur</button>
+        </form>
+    </section>
+
+    <section id="how-it-works">
+        <h2>COMMENT ÇA MARCHE?</h2>
+        <div>
+            <h3>Pour les propriétaires</h3>
+            <ol>
+                <li>Creer votre compte partenaire: Remplissez le formulaire d’inscription en renseignant vos informations professionnelles</li>
+                <li>Ajoutez vos services: Publiez vos résidences ou hôtels, photos, descriptions et tarifs.</li>
+                <li>Valider vos informations: Nos équipes vérifient vos annonces pour garantir leur conformité et leur qualité.</li>
+                <li>Signer le contrat de partenariat: Une fois validé, vous recevrez un contrat à signer électroniquement.</li>
+                <li>Commencer a recevoir des reservations: Dès activation de votre compte, vous pouvez recevoir des demandes et gérer vos réservations depuis votre tableau de bord.</li>
+                <li>Recevez vos paiements: Les paiements sont versés dès l’arrivée du client.</li>
+            </ol>
+        </div>
+        <div>
+            <h3>Pour les voyageurs</h3>
+            <ol>
+                <li>Création de compte: Vous remplissez juste le formulaire d’inscription et votre compte est créé après validation.</li>
+                <li>Cherchez facilement votre résidence ou hôtels: Vous avez la capacité de trouver le logement de votre choix selon : le lieux, le prix,la période, la qualité, le score d’avis, le type de bien, les attributs (piscine, parking, bureau, bar …)</li>
+                <li>Paiement sécurisé via la plateforme: Plus d’arnaques, vous payez directement sur la plateforme : wave ou paypal. Deux choix vous sont soumises  : soit paiement total sur la plateforme, soit paiement partiel (50% à la réservation et 50% à l’arrivée ).</li>
+                <li>Réception de facture de réservation: Vous recevez directement une facture normalisée qui donne tous les détails de votre réservation.(localisation, nom de la résidence, statut de la réservation, période, paiement…)</li>
+            </ol>
+        </div>
+    </section>
+
+</body>
+</html>
