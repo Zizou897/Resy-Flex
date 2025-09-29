@@ -1,0 +1,603 @@
+<!doctype html>
+{% load static %}
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resy-Flex — Landing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="bg-[#0b2540] text-white p-4">
+  <div class="container mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      {% comment %} <img src="/static/images/flex5.jpg" alt="logo" class="h-10 rounded"> {% endcomment %}
+      <span class="font-bold text-lg">Resy-Flex</span>
+    </div>
+
+    <!-- Menu desktop -->
+    <nav class="hidden md:flex gap-6">
+      <a href="''" class="opacity-90 hover:opacity-100 transition">Accueil</a>
+      <a href="#" class="opacity-90 hover:opacity-100 transition">Résidences</a>
+      <a href="#inscription" class="opacity-90 hover:opacity-100 transition">Inscription</a>
+    </nav>
+
+    <!-- Hamburger mobile -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-[#0b2540] mt-2 flex flex-col gap-2 p-4 rounded-lg">
+    <a href="#" class="opacity-90 hover:opacity-100 transition">Accueil</a>
+    <a href="#" class="opacity-90 hover:opacity-100 transition">Résidences</a>
+    <a href="#inscription" class="opacity-90 hover:opacity-100 transition">Inscription</a>
+  </nav>
+</header>
+
+
+  <!-- HERO -->
+  <section class="relative">
+    <img src="{% static 'images/banner.jpg' %}" alt="Résidence" class="w-full h-[60vh] object-cover">
+    <div class="absolute inset-0 bg-black/40 flex items-center">
+      <div class="container mx-auto px-6">
+        <h1 class="text-white text-4xl md:text-6xl font-extrabold leading-tight">Resy-Flex — Vivez l’expérience de la réservation sans mauvaise surprise.</h1>
+        <p class="text-white/90 mt-4 max-w-2xl font-bold">
+          la plateforme qui structure le marché d’hébergement en Côte d’Ivoire.
+          Voyageurs, propriétaires, ambassadeurs : ensemble, structurons le secteur d’hébergement 
+          touristique en valorisant le patrimoine immobilier ivoirien et apporter  une expérience unique aux voyageurs.
+
+        </p>
+        <a href="#inscription" class="inline-block mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg">Rejoindre la liste d’attente — Tentez de gagner une nuit !</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pourquoi -->
+  
+  <!-- Section Qu'est-ce que Resy-Flex -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Qu’est-ce que Resy-Flex ?</h2>
+        <p>
+          Resy-Flex simplifie la réservation et la gestion des résidences meublées en Côte d’Ivoire tout en créant de la richesse pour les ambassadeurs prêts à construire leur propre empire entrepreneurial.
+        </p>
+        <p class="mission">
+          <strong>Notre mission :</strong> structurer, formaliser, et professionnaliser le secteur de réservation en CI tout en offrant aux voyageurs une expérience fiable, sécurisée, fluide et permettre aux partenaires locaux de valoriser leurs biens dans un cadre professionnel.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="{% static 'images/flex5.jpg' %}" alt="Vérification de résidence">
+      </div>
+    </div>
+  </div>
+</section>
+<style> 
+  /* Section Qu'est-ce que Resy-Flex */
+.about-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1 1 500px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #0a3d62;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.about-text .mission {
+  font-weight: 500;
+  color: #0077b6;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+</style>
+
+<!-- Section Pourquoi Resy-Flex -->
+<section id="why" class="why-section">
+  <div class="container">
+    <h2>Pourquoi Resy-Flex ?</h2>
+    <div class="why-content">
+      
+      <!-- Colonne Voyageurs -->
+      <div class="why-column">
+        <h3>Pour les voyageurs</h3>
+        <ul>
+          <li>Réservations rapides et sécurisées</li>
+          <li>Résidences de qualité et vérifiées régulièrement pour assurer la conformité entre annonces et réalité</li>
+          <li>Accompagnement avant, pendant et après votre séjour : nous plaçons l’humain au cœur de nos services</li>
+          <li>Paiement sécurisé : plus d’arnaque, nous sécurisons votre paiement jusqu’à votre arrivée (sécurité, transparence et confiance)</li>
+        </ul>
+      </div>
+
+      <!-- Colonne Propriétaires -->
+      <div class="why-column">
+        <h3>Pour les propriétaires</h3>
+        <ul>
+          <li>Visibilité accrue auprès de milliers de voyageurs locaux et internationaux</li>
+          <li>Gestion simplifiée via un tableau de bord moderne : travaillez de façon professionnelle, gérez vos réservations, vos disponibilités et vos statistiques</li>
+          <li>Réduction du budget publicitaire : nous nous chargeons de votre promotion à travers le monde (réseaux sociaux, ambassadeurs locaux...)</li>
+          <li>Avantage concurrentiel : attirez des voyageurs exigeants prêts à payer le prix pour la qualité</li>
+          <li>Modèle économique flexible : choix entre commissions ou abonnement</li>
+          <li>Moins de stress de dernière minute : assistance disponible pour vos clients en première ligne</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+  /* Section Pourquoi Resy-Flex */
+.why-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+.why-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #0a3d62;
+  margin-bottom: 50px;
+}
+
+.why-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-column {
+  flex: 1 1 450px;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.why-column:hover {
+  transform: translateY(-5px);
+}
+
+.why-column h3 {
+  font-size: 1.5rem;
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+.why-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-column ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.why-column ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00b4d8;
+  font-weight: bold;
+}
+
+</style>
+
+  <!-- Formulaire -->
+  <!-- Section Inscription -->
+<section id="inscription" class="signup-section" style="background-color:#0b2540;">
+  <div class="container">
+    <h2>Rejoignez dès aujourd’hui notre communauté !</h2>
+    <p class="subtitle">
+      Voyageurs, propriétaires et ambassadeurs : soyez parmi les premiers à profiter d’avantages exclusifs au lancement.
+    </p>
+    <p class="free">INSCRIPTION GRATUITE</p>
+
+    <form method="POST" class="signup-form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Nom complet</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Adresse email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label>Je suis :</label>
+        <div class="radio-group">
+          <label><input type="radio" name="role" value="Voyageur" required> Voyageur</label>
+          <label><input type="radio" name="role" value="Propriétaire"> Propriétaire</label>
+          <label><input type="radio" name="role" value="Ambassadeur"> Ambassadeur</label>
+        </div>
+      </div>
+
+       <div class="text-center">
+    <button type="submit"
+            class="bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-300 text-white font-semibold px-6 py-3 rounded-lg transition">
+      Je m’inscris / Devenir ambassadeur
+    </button>
+  </div>
+    </form>
+
+    {% if success %}
+      <p class="success-message">🎉 Merci ! Nous vous avons envoyé un email de confirmation. Restez à l’affût — des surprises pour nos premiers inscrits.</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  /* Section Inscription */
+.signup-section {
+  padding: 80px 20px;
+  /*background: linear-gradient(135deg, #4facfe, #00f2fe);*/
+  color: #fff;
+  text-align: center;
+}
+
+.signup-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.signup-section .subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.signup-section .free {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.signup-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.cta-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  background: #0077b6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #023e8a;
+}
+
+.success-message {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+</style>
+
+<section id="comment-ca-marche" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">COMMENT ÇA MARCHE ?</h2>
+
+    <!-- Pour les propriétaires -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-semibold text-blue-700 mb-8 text-center">Pour les propriétaires</h3>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+        <!-- Étape 1 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-blue-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-user-plus">1</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Créer votre compte partenaire</h4>
+            <p>Remplissez le formulaire d’inscription avec vos informations professionnelles.</p>
+          </div>
+        </div>
+
+        <!-- Étape 2 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-blue-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-home">2</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Ajoutez vos services</h4>
+            <p>Publiez vos résidences ou hôtels avec photos, descriptions et tarifs.</p>
+          </div>
+        </div>
+
+        <!-- Étape 3 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-blue-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-check-circle">3</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Valider vos informations</h4>
+            <p>Nos équipes vérifient vos annonces pour garantir leur conformité et leur qualité.</p>
+          </div>
+        </div>
+
+        <!-- Étape 4 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-blue-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-file-signature">4</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Signer le contrat de partenariat</h4>
+            <p>Une fois validé, vous recevrez un contrat électronique à signer.</p>
+          </div>
+        </div>
+
+        <!-- Étape 5 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-blue-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-calendar-check">5</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Commencer à recevoir des réservations</h4>
+            <p>Gérez vos demandes et disponibilités depuis votre tableau de bord.</p>
+          </div>
+        </div>
+
+        <!-- Étape 6 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-blue-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-wallet">6</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Recevez vos paiements</h4>
+            <p>Les paiements sont versés dès l’arrivée du client.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pour les voyageurs -->
+    <div>
+      <h3 class="text-2xl font-semibold text-green-700 mb-8 text-center">Pour les voyageurs</h3>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+        <!-- Étape 1 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-green-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-user-plus">1</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Création de compte</h4>
+            <p>Remplissez le formulaire et votre compte est validé rapidement.</p>
+          </div>
+        </div>
+
+        <!-- Étape 2 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-green-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-search">2</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Cherchez votre résidence ou hôtel</h4>
+            <p>Filtrez par lieu, prix, période, qualité, score d’avis, type de bien, attributs (piscine, parking, bureau…)</p>
+            <a href="{% static 'images/flex1.jpg' %}" class="glightbox" data-glightbox="title: Recherche logement">
+              <img src="{% static 'images/flex1.jpg' %}" alt="Recherche logement" class="rounded-lg mt-2 shadow">
+            </a>
+          </div>
+        </div>
+
+        <!-- Étape 3 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-green-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-credit-card">3</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Paiement sécurisé</h4>
+            <p>Paiement directement sur la plateforme via Wave ou PayPal. Options : paiement total ou partiel (50% à la réservation, 50% à l’arrivée).</p>
+            <a href="{% static 'images/flex3.jpg' %}" class="glightbox" data-glightbox="title: Paiement sécurisé">
+              <img src="{% static 'images/flex3.jpg' %}" alt="Paiement sécurisé" class="rounded-lg mt-2 shadow">
+            </a>
+          </div>
+        </div>
+
+        <!-- Étape 4 -->
+        <div class="step flex items-start gap-4">
+          <div class="icon bg-green-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-xl">
+            <i class="as fa-receipt">4</i>
+          </div>
+          <div>
+            <h4 class="font-bold">Réception de facture</h4>
+            <p>Vous recevez une facture normalisée avec tous les détails : localisation, nom de la résidence, statut, période, paiement…</p>
+            <a href="{% static 'images/flex2.jpg' %}" class="glightbox" data-glightbox="title: Réception de facture">
+              <img src="{% static 'images/flex2.jpg' %}" alt="Réception de facture" class="rounded-lg mt-2 shadow ">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+/* Stepper Section */
+.step {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step .icon {
+  font-size: 1.25rem;
+}
+
+.step h4 {
+  font-size: 1.125rem;
+  margin-bottom: 5px;
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.step img {
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+
+</style>
+  <footer class="bg-gray-900 text-white py-10">
+  <div class="container mx-auto px-4">
+    <!-- Contact -->
+    <div class="text-center mb-6">
+      <h4 class="text-lg font-semibold mb-2">Contactez-nous</h4>
+      <p class="mb-2">Pour toute question ou demande, écrivez-nous à :</p>
+      <a href="mailto:contact@resy-flex.com" class="text-blue-400 hover:underline font-medium">
+        contact@resy-flex.com
+      </a>
+    </div>
+
+    <!-- Réseaux sociaux -->
+    <div class="flex justify-center gap-6 mb-6">
+      <a href="#" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" target="_blank" class="hover:text-blue-400"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+
+    <!-- Mentions légales -->
+    <div class="text-center text-gray-400 text-sm">
+      <a href="#" class="hover:underline mx-2">Mentions légales</a> |
+      <a href="#" class="hover:underline mx-2">Politique de confidentialité</a>
+    </div>
+
+    <p class="text-center mt-4 text-gray-500 text-sm">&copy; 2025 Resy-Flex. Tous droits réservés.</p>
+  </div>
+</footer>
+
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const lightbox = GLightbox({
+    selector: '.glightbox'
+  });
+</script>
+
+</html>
